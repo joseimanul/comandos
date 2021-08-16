@@ -1,0 +1,66 @@
+
+
+pasos en la maquina origen 
+
+
+crear directorio para las copias
+mkdir /root/migracion
+cd /root/migracion/
+export UGIDLIMIT=500
+
+
+copia info de usuarios
+awk -v LIMIT=$UGIDLIMIT -F: '($3>=LIMIT) && ($3!=65534)' /etc/passwd > passwd.mig
+copia infto de grupos
+awk -v LIMIT=$UGIDLIMIT -F: '($3>=LIMIT) && ($3!=65534)' /etc/group > group.mig
+copia info de claves
+awk -v LIMIT=$UGIDLIMIT -F: '($3>=LIMIT) && ($3!=65534) {print $1}' /etc/passwd | tee - |egrep -f - /etc/shadow > shadow.mig
+cp /etc/gshadow gshadow.mig
+
+esto ya es para otra cosa
+cp /etc/httpd/conf/httpd.conf httpd.conf.mig
+cp /etc/php.ini php.ini.mig
+cp /etc/my.cnf my.cnf.mig
+tar cvpf mails.tar /var/spool/mail
+este copia los home de los usuarios
+tar cvpf homes.tar /home
+esto es par base dedatos 
+mysqldump -uroot -p --all-databases --flush-privileges --comments --disable-keys --lock-all-tables --lock-tables --result-file=respaldo_dbs.sql
+
+
+pasos en la maquina destino
+
+cd /root/migracion/
+mkdir respaldo-nuevo
+cp /etc/group /etc/passwd /etc/shadow /etc/gshadow /etc/httpd/conf/httpd.conf /etc/php.ini /etc/my.cnf respaldo-nuevo/
+###tar xf homes.tar  -C /
+cat passwd.mig >> /etc/passwd
+cat group.mig >> /etc/group
+cat shadow.mig >> /etc/shadow
+##cat gshadow.mig >> /etc/gshadow
+
+cp gshadow.mig /etc/gshadow
+
+
+
+tar xv mails.tar -C /
+mysql -uroot < respaldo_dbs.sql
+cp httpd.conf.mig /etc/httpd/conf/httpd.conf
+cp php.ini.mig /etc/php.ini
+cp my.cnf.mig /etc/my.cnf
+/etc/init.d/mysqld restart
+/etc/init.d/httpd restart
+
+--pra copiar ... como termina con /, el directorio ya debe de existir, si no exites quitar el /
+rsync -avzhu --progress -e ssh root@18.213.127.175:/root/migracion/ /root/migracion
+
+rsync -avzhu --progress -e ssh root@18.213.127.175:/oracle/ /oracle
+
+rsync -avzhu --progress -e ssh root@34.237.186.82:/dbfiles/ /dbfiles
+
+rsync -avzhu --progress -e ssh root@18.213.127.175:/home/ /home
+
+rsync -avzhu --progress -e ssh root@52.87.0.6:/root/saveimagesdocker/ /root/saveimagesdocker
+saveimagesdocker
+
+rsync -avzhu --progress -e ssh root@10.60.70.111:/root/pruebas_tmp/ /root/pruebas_tmp

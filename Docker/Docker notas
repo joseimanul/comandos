@@ -1,0 +1,9 @@
+La arquitectura de Docker, se compone de los siguientes componentes
+    *Docker Client
+    *Docker Daemon
+    *Container
+    *Local Images
+    *Image Registry
+
+Sea local o remotamente, Docker maneja una arquitectura de "Cliente-Servidor", en el sentido en que el cliente (Docker Client) corre comandos que van a ser enviados al servidor (Docker Daemon), por ejemplo, cuando ejecutamos el comando "Docker run [Parametros] [Nombre_Imagen]", quien realmente ejecuta los procesos, es el Docker Daemon, es responsable por la gestion de imagenes y contenedores entre otros.
+

@@ -1,0 +1,277 @@
+PROCEDIMIENTO PARA VINCULAR DB SERVER CON APPSERVER
+OSCK Server SFBE0800 SAO 474471
+
+EN LA CONSOLA DE AMAZON:
+
+Crear una nueva instancia apartir de un AMI
+Ir a la funcionalidad ec2:
+
+En la parte izquierda seleccionar la opción "AMI"
+	seleccionar la AMI con la cual desea crear un nuevo ambiente
+	oprimir el boton "Lunch"
+		seleecione el tipo de instancia
+		next
+		next
+		next
+		adicione el tag Name y su valor (nombre)
+		Seleccione el security gruop correspondiente
+		REview and lunch
+		lunch
+		seleccionar llave ppk -- siempre open02  para clientes, validar
+		marcar flag de la llave
+		lunch instances
+
+En la parte izquierda de la ventana EC2 esta la opción "elastic IP":
+	seleccionar una que NO tenga el nombre "Demo*"
+	click en boton "Actions"
+	click en opción "Associate Adress"
+	Asignele el "Instance ID" con el correspondiente de la instancia
+	Seleccione la Ip interna correspondiente
+	No marcar flag
+
+	Repetir este paso para todas las instancias creadas
+
+
+
+CONFIGURACIÓN POST CREACIÓN:
+
+Configurar el listener de la base de datos
+Ir a la ruta del tsnames.ora
+cd $ORACLE_HOME/network/admin
+rm *.bak
+
+Editar el archivo listener
+	vi listener.ora
+	configurar la ip interna del DBserver
+	guardar
+
+
+Configurar los hosts en DBServer:
+	vi /etc/hosts
+		cambiar ip interna y externa por la nueva
+
+
+
+Configuración en el DBEXPLORER:
+
+Ingresar a la base de datos por dbexplorer
+	user=SFBK0800
+	pass=OpenPas$#2019_
+	server=52.0.240.23:1521:OSFDB
+
+
+usar los comandos del al archivo "configuración para enlazar el appserver con dbserver"
+
+
+
+
+
+
+Configuración en el APPSERVER:
+conectarse con usuario tomcat
+	sudo su -
+	su - tomcat
+
+ir a la ruta "/opt/tomcat/conf"
+	cd $CATALINA_HOME
+	cd conf
+
+***************TAMBIEN CAMBIAR EL NOMBRE DE LA BASE DE DATOS (AMBIENTE), EN ESTE CASO FUE SFBE POR SFLA***********************
+
+editar la dirección ip con la ip interna del dbserver en el archivo "context.xml"
+	vi context.xml
+	:%s/cadena_a_ser_reemplazada/cadena_de_reemplazo/
+	:%s/172.31.10.37/172.31.13.92/
+
+editar la dirección ip con la ip interna del dbserver en el archivo "server.xml"
+	vi server.xml
+	:%s/cadena_a_ser_reemplazada/cadena_de_reemplazo/
+	:%s/172.31.9.183/172.31.2.91/
+
+editar la dirección ip con la ip interna del appserver en el archivo "server.xml"
+	vi server.xml
+	:%s/172.31.0.176/172.31.10.44/
+
+editar los archivos de la carpeta "/opt/tomcat/properties" (los que usen ip interna de dbserver y appserver) validar que sea la ip interna del appsserver y no del dbserver
+
+Nota: validar todos los archivos .properties contenidos
+
+	vi ldap.properties >>>>>	cambiar ip appserver
+	vi messageBroker.properties >>>	cambiar ip appserver
+	vi redis.properties >>>>	cambiar ip appserver
+	vi trace.properties >>>>	cambiar ip appserver
+
+
+Bajar todos los servicios del appserver
+
+Subir todos los servicios del appserver
+
+
+
+CONFIGURACIÓN EN EL  DB SERVER:tail 
+
+
+Conectarse con usuario de base de datos
+	sudo su - cwdb01 (en caso de que este usuario no exista, entrar con el usuario oracle1212), para verificar si soy un usuario de base de datos, ejecutar este comando lsnrctl status; si me lo permite ejecutar es que si soy un usuario de la base de datos
+
+ir a la ruta 
+	home/cwdb01/.ssh/ (cuando una carpeta empieza con ".", es una carpeta oculta)
+
+Borrar los siguientes archivos
+	id_rsa 		---borrar
+	id_rsa.pub  	----borrar
+know_host		--- mantener
+
+
+Ir al home del usuario
+	cd ..
+
+Generar llave 
+	ssh-keygen  ---responder con enter a todo
+
+---compartir llave cambiar la ip privada por la del appserver
+cat .ssh/id_rsa.pub | ssh tomcat@172.31.69.87 'cat >> .ssh/authorized_keys'
+	>> digitar password usuario tomcat (t0mc4t)
+
+---prueba (cambiar ip privada por la misma de arriba)
+ssh tomcat@172.31.69.87 
+
+
+
+CONFIGURACIÓN DE LA PUBLICACIÓN
+
+Ingresar al servidor NGINX por "WIN SCP"
+	server:35.168.40.42
+	user: nginx
+	pass: ng1nx
+
+ejectuar el comando bash, para poder modificar el doc
+
+editar el archivo 
+	vi /data/docker/apps/nginx/nginx.conf
+
+
+Agregar el siguiente bloque y modificar el nombre de la instancia y la dirección IP interna del APPserver respectivamente, guardar el archivo:
+
+location /SFBK0800PM{
+	proxy_set_header X-Real-IP $remote_addr;
+	proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+	proxy_set_header Host $host;
+	rewrite ^/SFBK0800PM/(.*) /$1 break;
+	proxy_pass http://172.31.10.44:8080;
+		    }
+
+
+Reiniciar el servicio del nginx dede PUTTY:
+	cd /data/docker/apps/nginx/
+	docker-compose stop
+	docker-compose start
+
+
+Validar que la URL este visible en el browser:
+https://demos.openintl.com/SFBT0800PM/sfbk0800/SACME/index.html
+
+
+
+Elaborar informe:
+
+Aplicativo:
+https://demos.openintl.com/SFBT0800PM/open/SACME/index.html
+User: admisecs
+Pwd larga: OpenPas$#2019
+
+
+DB Server 
+Public IP: 50.19.139.198
+Priv IP: 172.31.42.107
+Port: 1521
+user: OPEN
+pwd: O182D0350C5F982967E501342EB048
+SID: SFBT0800
+
+
+App Server 
+Public IP: 34.196.173.211
+Priv IP: 172.31.0.8
+
+
+OSCK Server
+URL: http://23.23.3.183:8080/system/console/bundles
+User: karaf
+Password: karaf
+
+Public IP: 23.23.3.183
+Private IP: 172.31.10.52
+
+
+################ CONFIGURACIÓN OSCK ###############################
+
+Configuración en el OSCKSERVER:
+conectarse con usuario tomcat
+	sudo su -
+	su - tomcat
+
+ir a la ruta "/opt/tomcat/conf"
+	cd $CATALINA_HOME
+	cd conf
+
+
+editar la dirección ip con la ip interna y el resto de daatos correspondientes al acceso del dbserver en el archivo "server.xml"
+	vi server.xml
+	:%s/cadena_a_ser_reemplazada/cadena_de_reemplazo/
+	:%s/172.31.10.66/172.31.15.26/
+
+
+Ingresar a la base de datos y configurar la tabla ge_parameter
+	
+
+
+Probar el funcionamiento del OSCK desde el navegador web (cambiar la dirección ip por la ip publica del OSCK)
+http://18.205.201.241:8080/openintl-api-osck-internal-ommunication/v1/processors/
+
+
+
+
+
+
+######### Configuración de licencia cuando cambia la ip de la máquina #########
+
+forzar la licencia colocandola en estado w => y luego logearse con admisecs
+
+
+
+
+
+
+
+
+
+
+
+########## Configuración para cambiar el nombre de la base de datos #########
+
+Entrar al DB Server
+
+Bajar la base de datos
+	shutdown inmmediate
+
+subir la base de dato sin montarla
+	startup nomount;
+
+Ajustar el nuevo nombre de la base de datos
+
+
+subir el montaje de la base de datos
+	startup mount pfile='initSFBH0800.ora'
+
+
+
+
+
+
+
+
+
+
+
+

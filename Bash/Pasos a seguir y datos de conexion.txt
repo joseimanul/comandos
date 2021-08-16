@@ -1,0 +1,228 @@
+
+
+#######			TUTORIA YARINE
+
+
+Como Instalar un HotFix
+
+Escritorio remoto
+	url: 18.209.90.95
+	usr: Administrator
+	Pass: MnAu7tNEKkx).if(SRL=bkCTI).k)gnG
+
+
+Conexion en AWS Console
+Ambiente SFBC0800 BDServer
+Usuario: FORTCOLL		(user owner hotfix)
+Contraseña: FORTCOLLBA18	(ignorar)	
+Contraseña BD: F2F3E1CF8AAFBD6864AFF85618CDA8	(pass owner hotfix)
+Base de Datos: SFBC0800
+Servidor BD Priv: 	
+Servidor BD Publ: 54.173.107.1
+Puerto: 1521
+Usuario S.O.: open
+Pass S.O.: 0p3n2018
+Usuario S.O. Oracle: oracle1212
+Pass S.O. Oracle: Orcld3m0		
+Usuario S.O. OSF: sfba0800	(user aplicar hotfix)
+Pass S.O. OSF: sfba0800		(pass aplicar hotfix)
+
+
+Ambiente SFBC0800 AppServer
+Servidor App Priv: 172.31.41.45
+Servidor App Publ: 18.214.248.86
+Usuario S.O.: tomcat
+Pass S.O.: t0mc4t
+URL Menú: https://demos.openintl.com/SFBC0800P/fortcoll/SACME/index.html#login
+Usuario: admisecs
+Pass: 4dm1s3cs2019
+
+
+
+
+Detener Ejecutores y demonios desde la aplicación (osf8)
+	Ir al escritorio remoto
+	conectarse a smartflex 8 como administrador
+		URL Menú: https://demos.openintl.com/SFBC0800P/fortcoll/SACME/index.html#login
+		Usuario: admisecs
+		Pass: 4dm1s3cs2019
+	GECAD >> system Processes >> Ejecutor de proceso
+		Detener hilos activos
+		Detener Servidor
+	GECAD >> system Processes >> Proceso Demonio
+		Detener
+
+
+Hacer el Backup de la maquina en AWS
+	URL: https://console.aws.amazon.com/console/home?region=us-east-1#
+		services >> EC2
+			Instances >> Instaces
+				actions >> Image >> Create Image
+
+Iniciar las instancias en AWS
+
+
+Entrar al servidor (DB SERVER) desde putty
+	load KeyOpen02
+	asignar la Ip de la base de datos
+	Demos/fortcoll		piloto			bd
+	user: ec2-user	|	clckwrk		|	oracle1212
+	pass: automatico|	automatico	|	Orcld3m0
+	cambiar de usuario a administrador
+		sudo su - oracle1212
+		sudo su - cwdb01
+		sudo su -
+
+
+Subir base de datos
+	verificar y subir listener >>  lsnrctl start LISTENER // lsnrctl start LISTENER_GRID
+	verificamos el valor oracle SID:	echo $ORACLE_SID >>> SFBC0800 (ambiente de oracle)  >>> si sale vacio >> export ORACLE_SID=[NOMBRE DE LA INSTANCIA EN MAYUSCULAS]SFBE0800
+	
+	****************
+	Si la variable ORACLE_SID esta vacia, es mejor conectarse por medio de "vi", al archivo .profile, en donde voy a poder modificar en la propiedad oracle_sid, el nombre de la base de datos, en este SFLA0800
+	****************
+	conectarnos al motor: sqlplus sys as sysdba	 (usuario oracle super)
+		pas: [enter]
+	subir base de datos:	startup
+	salir la base de datos:	exit
+	montar el directorio compartido (solo para piloto)
+		mount -t nfs 172.31.38.6:/home/open /home/open
+
+
+Aplicar HotFix
+	Ingresar al ambiente de amazon por escritorio remoto
+	Descargar el hotFisx desde WINSCP
+		ftpfortcollins@entregas.open.com.co (ambiente de fotcollin)
+			xxxftpfortcollins815
+		ftpaseg@mail.open.com.co (ambientes de open)
+	
+	Descomprimir Hotfix
+	Instalar HotFix
+	Digitar usuario y contraseña de OSF para HotFix
+		activar el checkbox diciendo que es un DBserveer
+		usr: sfba0800		|	open
+		pass: sfba0800		|	open123
+		server: 172.31.2.187 	|	IPjumpbox	(IP PRIVADA DE 	seleccionar carpeta 			
+	validations
+		/tmp/
+	
+	DB SERVER en la paguina web de AWS)
+	Digitar usuario y contraseña de Oracle para Hotfix
+		usr: sys
+		pas: manager
+		inst: SFBC0800
+	
+	Digitar usuario y contraseña owner
+		Usuario: FORTCOLL		(user owner hotfix)
+		Contraseña BD: F2F3E1CF8AAFBD6864AFF85618CDA8	(pass owner hotfix)
+	
+	asignar carpeta temporal: 
+		/home/sfba0800/tmpins/SFBA0800 >> hasta ver las versiones anteriores
+	
+	Seleccionar carpeta proc
+		/dbfiles/SFBE0800/ProCs/  >> hasta ver la carpeta BSS
+		/home/open/ProC  >> hasta ver la carpeta BSS
+	
+	seleccionar carpeta Client Installation
+		directorio del instalador
+	
+	sizin
+		select all
+		Asingnar datafiles
+			consultarlo en el catalog 									(/dbfiles/SFBZ0800/datafiles\)
+
+	Parametros de dimensionamientos
+		todos en 1 para ambientes open, para otros preguntar!!
+
+	asignar ruta Proc:
+		/dbfiles/SFBC0800/ProC		(optional)
+
+	NO aplicar oracle partitioning
+		para ambientes de la nube
+
+	Instalación del HotFix
+		Logs en Putty (user: sfba0800) - /home/sfba0800/tmpins/SFBA0800/Installer_8.00.000_tpAS19/FORTCOLL
+	finalizar
+
+
+Que hacer en caso de que falle la sincronización de websites:
+	Intentar un retry
+	Leer el mensaje de error
+		Volver aplicar la llave de confianza (caso particular)
+		En la base de datos revisar los parametros de las tablas:
+			ge_parameter
+			ge_websites
+
+
+
+
+Subir App server y servicios
+	Inicar con putty cargando la configuración keyOpen02
+			modificar la dirección IP con la del APP server (pública si estamos por fuera del remoto)
+		user: ubuntu
+		pas: no necesita
+	cambiar al usuario root (todo poderoso)
+		sudo su -
+
+	Inicar Redis
+		iniciar con root
+		systemctl start redis
+	Borrar cache de Redis
+		redis-cli
+		flushall	>> ok
+		exit
+
+	Iniciar ApacheDS
+		inicair con root
+		systemctl start apacheds
+		cd /opt/apacheds-2.0.0.AM25/bin
+		./apacheds start openintl
+
+	Iniciar active MQ
+		por lo general se instala en ambientes SFBA o SFBZ
+		iniciar con root
+		consultar ruta 
+		cd /opt/apache-activemq-5.15.5
+		./bin/activemq start
+
+	Iniciar NodeJS
+		conectarse con usuario nodejs
+			su - nodejs
+		cd /home/nodejs/SFBZ0800/NotificationsPopUp
+			(ajustar a la base de datos especifica)
+		pm2 start openintl-nodejs.config.js
+			buscar en la ruta el archivo [.config.js]
+		exit
+
+
+	Inicar Tomcat 
+		su - tomcat
+			t0mc4t
+		sudo systemctl start tomcat
+		tail -f /opt/tomcat/logs/catalina.out
+
+
+Subir Ejecutores y demonio
+	Ir al escritorio remoto
+	conectarse a smartflex 8 como administrador
+	GECAD >> system Processes >> Ejecutor de proceso
+		Iniciar servirdor (start)
+		Arrancar Servidor (lunch)
+	GECAD >> system Processes >> Proceso Demonio
+		Iniciar
+	
+
+
+Validar	que se instaló el hotfix
+	Ingresar a DBexplorer
+		usr: FORTCOLL (owner)
+		pass: (contraseña owner)
+		inst: base de datos
+		consulta: select * from ge_database_version order by 1 desc
+
+
+Correo final
+
+
+
+

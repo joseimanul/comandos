@@ -1,0 +1,1000 @@
+  739  ps
+  740  ps -fea
+  741  ps -fea | grep globa
+  742  kill -9 971 1194 2044
+  743  sudo kill -9 971 
+  744  sudo kill -9 971 1194 2044
+  745  ps -fea | grep globa
+  746  history
+  747  ps -fea | grep globa
+  748  sudo kill -9 895 1213 1707
+  749  ps -fea | grep globa
+  750  sudo systemctl stop globalprotect
+  751  sudo kill -9 4051 8824 8826 8848 8900
+  752  ps -fea | grep globa
+  753  kill -9 19171
+  754  ps -fea | grep globa
+  755  history | grep global
+  756  history
+  757  history | grep global
+  758  ps -fea | grep globalprotect
+  759  sudo kill -9 845 1216 1715
+  760  ps -fea | grep globalprotect
+  761  cd /opt/paloaltonetworks/globalprotect/
+  762  ls
+  763  ./PanGPS stop
+  764  q
+  765  ./PanGPS stop
+  766  sudo su -
+  767  ps -fea | grep globalprotect
+  768  sudo kill -9 910 1245 1744 
+  769  ps -fea | grep globalprotect
+  770  sudo kill -9 1001 1261 1845
+  771  ps -fea | grep globalprotect
+  772  sudo kill -9 917 1243 1761
+  773  ps -fea | grep globalprotect
+  774  sudo kill -9 1013 1276 1902
+  775  ps -fea | grep globalprotect
+  776  sudo kill -9 914 1247 1743
+  777  az account list -o table
+  778  az account set --subscription "QA W-CSP"
+  779  az aks get-credentials --resource-group rqqaaks --name qaakscluster --admin
+  780  az aks get-credentials --resource-group rgqaaks --name qaakscluster --admin
+  781  ls
+  782  vi CertificateSecurityServiceDev_d11af254f8b041ae929dcc0adc036137.cer 
+  783  ps -fea | grep global
+  784  kill -9 861 1224 1742
+  785  sudo kill -9 861 1224 1742
+  786  kill -9 861 1224 1742
+  787  ps -fea | grep global
+  788  terragrunt
+  789  terragruntito
+  790  terraform
+  791  az
+  792  azs
+  793  git
+  794  git --version
+  795  git --help
+  796  l
+  797  clear
+  798  ls
+  799  cd Documents/
+  800  ls
+  801  mkdir Equipo_Cloud
+  802  cd Equipo_Cloud/
+  803  git init
+  804  ls
+  805  ls -lrta
+  806  vi texto.txt
+  807  ls
+  808  vi texto.txt
+  809  ls
+  810  cd Documents/
+  811  ls
+  812  cd Equipo_Cloud/
+  813  ls
+  814  vi texto.txt
+  815  ls -lrta
+  816  rm -rf .texto.txt.swp
+  817  vi texto.txt
+  818  ls
+  819  ls -lrta
+  820  git status
+  821  cd .git/
+  822  ls
+  823  cd info/
+  824  ls
+  825  cd .
+  826  cd ..
+  827  cd objects/
+  828  ls
+  829  cd info/
+  830  ls
+  831  cd ../..
+  832  cd refs/
+  833  ñs
+  834  ls
+  835  cd ..
+  836  ls
+  837  clear
+  838  git add texto.txt 
+  839  git status
+  840  git commit -m "Mi primer commit" texto.txt 
+  841  git status
+  842  git log
+  843  ls
+  844  vi texto.txt 
+  845  git status
+  846  git add texto.txt 
+  847  git status
+  848  git commit -m "Mi segundo commit" texto.txt 
+  849  git log
+  850  git checkout dc6c2e5eb51ec68e6999ffeeb0a63f03890dfa20
+  851  vi texto.txt 
+  852  git checkout 7d78eb47d14202a4e19a5fc53d907d9287c22ab6
+  853  vi texto.txt 
+  854  git diff 7d78eb47d14202a4e19a5fc53d907d9287c22ab6 dc6c2e5eb51ec68e6999ffeeb0a63f03890dfa20
+  855  git -help
+  856  git
+  857  ls
+  858  ps -fea | grep global
+  859  cd /opt/paloaltonetworks/globalprotect/
+  860  ./PanGPA stop
+  861  ps -fea | grep global
+  862  sudo ./PanGPA stop
+  863  ps -fea | grep global
+  864  systemctl stop PanGPA
+  865  systemctl stop PanGPS
+  866  sudo systemctl stop PanGPS
+  867  sudo systemctl stop PanGPA
+  868  ps -fea | grep global
+  869  kill -9 1742 12013 12023 12034 12040 12113
+  870  ps -fea | grep global
+  871  kill -9 1219 22561 22562 
+  872  ps -fea | grep global
+  873  sudo kill -9 883 22599 22600 22617 22618
+  874  ps -fea | grep global
+  875  kill -9 1006 1262 1382
+  876  ps -fea | grep global
+  877  sudo kill -9 1276 1886
+  878  ps -fea | grep global
+  879  sudo kill -9 995 3232 3233
+  880  ps -fea | grep global
+  881  sudo kill -9 853 1237 1731
+  882  ps -fea | grep global
+  883  sudo kill -9 894 1247 1717
+  884  ps -fea | grep global
+  885  ls
+  886  cd iac/
+  887  ls
+  888  cd colombia/
+  889  ls
+  890  cd pt-recovery/
+  891  ls
+  892  cd appservicesplan/
+  893  ls
+  894  history | grep set
+  895  az account set --subscription "QA W-CSP"
+  896  terragrunt plan
+  897  ls
+  898  cd iac/
+  899  ls
+  900  cd colombia/
+  901  ls
+  902  cd pt-recovery/
+  903  ls
+  904  cd appservicesplan/
+  905  terragrunt plan
+  906  ls
+  907  terragrunt plan
+  908  terragrunt status
+  909  terragrunt state
+  910  terraform state
+  911  terraform state show
+  912  terragrunt refresh
+  913  terragrunt plan
+  914  terragrunt refresh
+  915  ls
+  916  cd ..
+  917  ls
+  918  cd webappssiigo/
+  919  ls
+  920  terragrunt plan
+  921  ls 
+  922  cd infrastructure-modules/
+  923  ls
+  924  cd azure/
+  925  ls
+  926  cd appservicesplan/
+  927  ls
+  928  pwd
+  929  git clone https://SiigoDevOps@dev.azure.com/SiigoDevOps/Architecture/_git/infrastructure-modules
+  930  ls
+  931  cd infrastructure-modules/
+  932  ls
+  933  git branch
+  934  cd ..
+  935  cd Git_Documents/
+  936  ls
+  937  git clone https://SiigoDevOps@dev.azure.com/SiigoDevOps/Architecture/_git/iac
+  938  la
+  939  ls
+  940  cd iac/
+  941  ls
+  942  git branch
+  943  git checkout infrastructure-code
+  944  ls
+  945  ls 
+  946  find 
+  947  fin north
+  948  find north
+  949  find "north"
+  950  grep -lir north
+  951  ps -fea | grep global
+  952  sudo kill -9 1001 1268 1896
+  953  ls
+  954  cd iac/
+  955  ls
+  956  cd colombia/
+  957  cd pt-recovery/
+  958  ls
+  959  cd webappssiigo/
+  960  ls
+  961  terragrunt plan
+  962  ls
+  963  cd .
+  964  cd ..
+  965  ls
+  966  cd subnets/
+  967  ls
+  968  terragrunt plan
+  969  git status
+  970  cd ..
+  971  pwd
+  972  ls
+  973  cd iac/
+  974  ls
+  975  git status
+  976  git checkout -b feat/infra/davi800971-drp-esiigo
+  977  git status
+  978  ls
+  979  cd colombia/pt-recovery/webappssiigo/
+  980  ls
+  981  terragrunt plan
+  982  clear
+  983  ls
+  984  terragrunt plan
+  985  ps -fea | grep global
+  986  sudo kill -9 919 1250 1755
+  987  ps -fea | grep global
+  988  sudo kill -9 893 1231 1787 3176 3398 3899 3974 4201 4348 4349 4362
+  989  ps -fea | grep global
+  990  sudo kill -9 6601 6602
+  991  ps -fea | grep global
+  992  ls
+  993  cd iac/colombia/pt-recovery/webappssiigo/
+  994  ls
+  995  terragrunt plan
+  996  ls
+  997  git status
+  998  cd ..
+  999  git status
+ 1000  git add appservicesplan/ common_vars.yaml terragrunt_azure.hcl terragrunt_k8s.hcl webappssiigo/
+ 1001  git status
+ 1002  git commit -m "Integracion del modulo de webapps y app service plan, para pt-recovery"
+ 1003  git pull
+ 1004  git push origin:feat/infra/davi800971-drp-esiigo
+ 1005  ps -fea | grep global
+ 1006  sudo kill -9 882 1253 1755 3957 4023 4052 4060 4294 5125 5126
+ 1007  ps -fea | grep global
+ 1008  sudo kill -9 882 1253 1755 3957 4023 4052 4060 4294 5125 5126 5140
+ 1009  ps -fea | grep global
+ 1010  sudo kill -9 22370 22372
+ 1011  ps -fea | grep global
+ 1012  git status
+ 1013  ls
+ 1014  cd iac/
+ 1015  git status
+ 1016  ps -fea | grep global
+ 1017  sudo kill -9 967 1234 1758 3307 3314 3344 3359 3388 5349 5350 5363
+ 1018  ps -fea | grep global
+ 1019  ls
+ 1020  cd iac/
+ 1021  ls
+ 1022  cd colombia/
+ 1023  ls
+ 1024  cd pt-recovery/
+ 1025  ls
+ 1026  cd storage-accounts/
+ 1027  ls
+ 1028  terragrunt plan
+ 1029  cd ..
+ 1030  ls
+ 1031  git status
+ 1032  git add functionappsiigo/ storage-accounts/
+ 1033  git commit -m "Se agregan los modulos de storage account y function apps, y se configura el modulo de storage account"
+ 1034  git status
+ 1035  LS
+ 1036  ls
+ 1037  cd functionappsiigo/
+ 1038  ls
+ 1039  terragrunt plan
+ 1040  ls -lrta
+ 1041  sudo rm -rf .terragrunt-cache/
+ 1042  ls -lrta
+ 1043  ps -fea | grep global
+ 1044  sudo kill -9 991 1299 1922 2341 2348 2370 3177 3384 4612 4829 5271 7464 7465 7478 8661 13263 
+ 1045  ps -fea | grep global
+ 1046  ls
+ 1047  cd iac/colombia/pt-recovery/
+ 1048  ls
+ 1049  cd functionappsiigo/
+ 1050  terragrunt plan
+ 1051  cd ..
+ 1052  cd storage-accounts/
+ 1053  terragrunt refresh
+ 1054  cd ../functionappsiigo/
+ 1055  terragrunt plan
+ 1056  ls
+ 1057  cd ../webappssiigo/
+ 1058  terragrunt plan
+ 1059  git status
+ 1060  git log
+ 1061  git checkout cc9631cf34c33dc7252144cf82d2240fbe02be5d
+ 1062  terragrunt plan
+ 1063  cd ..
+ 1064  ls
+ 1065  cd appservicesplan/
+ 1066  ls
+ 1067  terragrunt plan
+ 1068  cd ..
+ 1069  ls
+ 1070  cd appserviceplan/
+ 1071  terragrunt plan
+ 1072  cd ../webappssiigo
+ 1073  ls
+ 1074  terragrunt plan
+ 1075  ls
+ 1076  terragrunt init
+ 1077  terraform init
+ 1078  terragrunt plan
+ 1079  ls
+ 1080  terragrunt plan
+ 1081  ls
+ 1082  terraform init
+ 1083  cd ..
+ 1084  cd mexico/
+ 1085  ls
+ 1086  cd qa/
+ 1087  ls
+ 1088  cd webappssiigo/
+ 1089  ls
+ 1090  terragrunt plan
+ 1091  cd ..
+ 1092  cd webappssiigo/
+ 1093  terragrunt refresh
+ 1094  cd ../../../colombia/pt-recovery/appservicesplan/
+ 1095  ls
+ 1096  terragrunt plan
+ 1097  pwd
+ 1098  ps -fea | grep global
+ 1099  sudo kill -9 896 1217 1755 2090 2098 2113 4262 4295 4331 4338 4414 4540 4541 4554 4788
+ 1100  ps -fea | grep global
+ 1101  sudo kill -9 6150 6151 6153 6165
+ 1102  ps -fea | grep global
+ 1103  sudo kill -9 6280 6281
+ 1104  ps -fea | grep global
+ 1105  sudo kill -9 6308
+ 1106  ps -fea | grep global
+ 1107  sudo kill -9 6331
+ 1108  ps -fea | grep global
+ 1109  ls
+ 1110  ps -fea | grep global
+ 1111  ls
+ 1112  cd /opt/paloaltonetworks/
+ 1113  ld
+ 1114  ls
+ 1115  mv globalprotect/ globalprotect2/
+ 1116  sudo mv globalprotect/ 2globalprotect2/
+ 1117  ls
+ 1118  cd ..
+ 1119  ls
+ 1120  sudo mv paloaltonetworks/ 2paloaltonetworks2/
+ 1121  ps -fea | grep global
+ 1122  ps -fea | grep globalprotec
+ 1123  ls
+ 1124  git checkout -b feat/davi800971/newchanges
+ 1125  git branch
+ 1126  sudo apt install nodejs
+ 1127  node -v or node –version
+ 1128  git config
+ 1129  git config -list
+ 1130  git config --list
+ 1131  history | grep config
+ 1132  git config --global user.email "josem321123@gmail.com"
+ 1133  git config --list
+ 1134  ls
+ 1135  cd Documents/
+ 1136  ls
+ 1137  cd Personales/
+ 1138  cd Cursos/
+ 1139  cd ..
+ 1140  rm -rf "Curso Dalia"
+ 1141  cd Cursos/
+ 1142  ls
+ 1143  git clone https://github.com/joseimanul/Flatris-LAB.git
+ 1144  git config --global user.email "davi800971@siigo.com"
+ 1145  ls
+ 1146  sudo apt-get remove skypeforlinux.deb
+ 1147  sudo apt-get remove skypeforlinux
+ 1148  sudo apt autoremove 
+ 1149  az cli
+ 1150  az login
+ 1151  ps -fea | grep skype
+ 1152  sudo systemctl stop skypeforlinux
+ 1153  cd /usr/share/skypeforlinux/
+ 1154  ls
+ 1155  cd /home/joseimanul/
+ 1156  ls
+ 1157  cd bin/
+ 1158  ls
+ 1159  cd ..
+ 1160  ls 
+ 1161  cd opt/
+ 1162  ls
+ 1163  cd ..
+ 1164  history | grep skype
+ 1165  docker
+ 1166  docker --version
+ 1167  docker run -p 5000:5000 in28min/hello-world-python:0.0.1.RELEASE
+ 1168  sudo docker run -p 5000:5000 in28min/hello-world-python:0.0.1.RELEASE
+ 1169  docker run -p 5000:5000 in28min/hello-world-python:0.0.1.RELEASE
+ 1170  sudo docker run -p 5000:5000 in28min/hello-world-java:0.0.1.RELEASE
+ 1171  sudo docker run -p 5000:5000 in28min/hello-world-nodejs:0.0.1.RELEASE
+ 1172  ls -la
+ 1173  ls -lrta
+ 1174  cd iac/colombia/pt-recovery/appservicesplan/
+ 1175  terragrunt refresh
+ 1176  terragrunt plan
+ 1177  terragrunt refresh
+ 1178  ls
+ 1179  terragrunt plan
+ 1180  terragrunt apply
+ 1181  terragrunt refresh
+ 1182  ls
+ 1183  git clone https://SiigoDevOps@dev.azure.com/SiigoDevOps/Architecture/_git/iac
+ 1184  git clone https://SiigoDevOps@dev.azure.com/SiigoDevOps/Architecture/_git/infrastructure-modules
+ 1185  ls
+ 1186  cd iac/
+ 1187  cd colombia/pt-recovery/appservicesplan/
+ 1188  terragrunt plan
+ 1189  cd ..
+ 1190  ls 
+ 1191  cd storage-accounts/
+ 1192  ls
+ 1193  terragrunt plan
+ 1194  terragrunt refresh
+ 1195  terragrunt plan
+ 1196  terragrunt refresh
+ 1197  terragrunt plan
+ 1198  terragrunt apply
+ 1199  terragrunt refresh
+ 1200  git branch
+ 1201  git status
+ 1202  git push origin 
+ 1203  git push --set-upstream origin feat/infra/davi800971-pt-recovery
+ 1204  ls
+ 1205  terragrunt refresh
+ 1206  terragrunt show -json
+ 1207  cd iac/colombia/pt-recovery/webappssiigo/
+ 1208  terragrunt plan
+ 1209  cd ..
+ 1210  cd functionappsiigo/
+ 1211  terragrunt plan
+ 1212  ls -lrta
+ 1213  sudo rm -rf .terragrunt-cache/
+ 1214  ls -lrta
+ 1215  terragrunt plan
+ 1216  cd ..
+ 1217  ls 
+ 1218  cd funciones/
+ 1219  ls
+ 1220  terragrunt plan
+ 1221  ls -lrta
+ 1222  sudo rm -rf .terragrunt-cache/
+ 1223  terragrunt refresh
+ 1224  ls -lrta
+ 1225  cd ..
+ 1226  cd -
+ 1227  pwd
+ 1228  cd ..
+ 1229  c d..
+ 1230  cd ..
+ 1231  cd /home/joseimanul/Documents/Git_Documents/iac/colombia/pt-recovery/
+ 1232  ls
+ 1233  cd functionappsiigo
+ 1234  terragrunt plan
+ 1235  ls -lrta 
+ 1236  rm -rf .terragrunt-cache/
+ 1237  git status
+ 1238  ls
+ 1239  cd ..
+ 1240  git status
+ 1241  git add functionappsiigo/
+ 1242  git commit -m "cambios functions"
+ 1243  cd functionappsiigo
+ 1244  ls
+ 1245  terragrunt plan
+ 1246  terragrunt refresh
+ 1247  terragrunt plan
+ 1248  uname -sr
+ 1249  sudo apt-get update
+ 1250  ls 
+ 1251  cd infrastructure-modules/
+ 1252  git pull
+ 1253  cd ..
+ 1254  cd iac/
+ 1255  ls
+ 1256  cd colombia/pt-recovery/storage-accounts/
+ 1257  ls
+ 1258  ls -lrta
+ 1259  rm -rf .terragrunt-cache/ .terraform.lock.hcl 
+ 1260  terragrunt plan
+ 1261  terragrunt apply
+ 1262  cd ../functionappsiigo/
+ 1263  ls -lrta
+ 1264  rm -rf .terragrunt-cache/ .terraform.lock.hcl 
+ 1265  terragrunt plan
+ 1266  git checkout dev
+ 1267  git pull
+ 1268  terragrunt plan
+ 1269  cd infrastructure-modules/
+ 1270  sudo docker run -d -p 5000:5000 in28min/hello-world-nodejs:0.0.1.RELEASE
+ 1271  docker logs b99082e589380acf10cf7527e514d9a2229df20ac106013df78a3b8b293ba5f2
+ 1272  sudo docker logs b99082e589380acf10cf7527e514d9a2229df20ac106013df78a3b8b293ba5f2
+ 1273  sudo docker logs -f b99082e589380acf10cf7527e514d9a2229df20ac106013df78a3b8b293ba5f2
+ 1274  docker images
+ 1275  sudo docker images
+ 1276  sudo su -
+ 1277  cd iac/colombia/pt-recovery/functionappsiigo/
+ 1278  terragrunt plan
+ 1279  cd ../../../../infrastructure-modules/
+ 1280  git branch
+ 1281  git checkout dev
+ 1282  git pull
+ 1283  ls
+ 1284  git branch
+ 1285  git checkout -b feat/infra/davi800971-app-gateway
+ 1286  ls
+ 1287  cd azure/application-gateway/
+ 1288  grep -lir sku
+ 1289  history | grep subs
+ 1290  az account list -o table
+ 1291  az account set --subscription "Clientes Nube W-CSP"
+ 1292  az resource link list
+ 1293  az resource list
+ 1294  az resource list -o table
+ 1295  az resource list | grep eSiigoV3ApiPlan9
+ 1296  az resource list --name "eSiigoV3ApiPlan9"
+ 1297  az resource list --name "*eSiigoV3*"
+ 1298  az resource list --name '*eSiigoV3*'
+ 1299  az resource list --name "eSiigoV3ApiPlan"
+ 1300  az resource list --name "eSiigoV3ApiPlan10"
+ 1301  az resource list --createdTime "2021-04-22"
+ 1302  az resource list -o table | grep "2021-04-22"
+ 1303  az resource list -o table | grep "2021-04-22
+ 1304  az resource list -o table | grep "*2021-04-22*"
+ 1305  az resource list -o table | grep "2021-04-22*"
+ 1306  az resource list -o table | grep "2021-02-02T16:08:12.097620+00:00"
+ 1307  az resource list -o table | grep 2021-02-02T16:08:12.097620+00:00
+ 1308  az resource list | grep 2021-02-02T16:08:12.097620+00:00
+ 1309  az resource list | grep 2021-04
+ 1310  history
+ 1311  az resource list | grep 2021-04
+ 1312  az resource list --name "eSiigoV3ApiPlan9"
+ 1313  cd infrastructure-modules/
+ 1314  ls -lrta
+ 1315  rm -rf www.packspro.website--03.jpg 
+ 1316  df -h
+ 1317  cd /dev/
+ 1318  ls
+ 1319  ls
+ 1320  cd Downloads/
+ 1321  mkdir chica
+ 1322  mv ChicaTatuada.rar chica/
+ 1323  cd iac/colombia/pt-recovery/functionappsiigo/
+ 1324  ls
+ 1325  terragrunt plan
+ 1326  history | grep feat
+ 1327  pwd
+ 1328  cd ..
+ 1329  cd webappssiigo/
+ 1330  pwd
+ 1331  cd ../functionappsiigo/
+ 1332  terragrunt plan
+ 1333  az account list
+ 1334  az account list -o table
+ 1335  history | grep account
+ 1336  az account set --subscription "Patrocinio de Microsoft Azure"
+ 1337  history
+ 1338  az resource list --name "ASP-rgReportsExcel-9528"
+ 1339  az resource list --name "report-api-facademico"
+ 1340  history | grep account
+ 1341  az account list -o table
+ 1342  history | aks
+ 1343  history | grep aks
+ 1344  az account list -o table
+ 1345  az account set --subscription "QA W-CSP"
+ 1346  az aks get-credentials --resource-group rgQAECUAKS --name QAECUaksCluster -admin
+ 1347  az aks get-credentials --resource-group rgQAECUAKS --name QAECUaksCluster --admin
+ 1348  ls
+ 1349  cd Documents/
+ 1350  ls
+ 1351  cd Git_Documents/
+ 1352  ls
+ 1353  cd infrastructure-modules/
+ 1354  ls
+ 1355  git pull
+ 1356  git branch
+ 1357  git checkout dev
+ 1358  git checkout feat/infra/davi800971-app-gateway 
+ 1359  git log
+ 1360  git status
+ 1361  cd ..
+ 1362  cd infrastructure-modules/
+ 1363  git checkout dev
+ 1364  git pull
+ 1365  git checkout -b feat/infra/davi800971-port-document
+ 1366  cd kubernetes/istio
+ 1367  ls
+ 1368  cd siigo-istiocontrolplane/
+ 1369  ls
+ 1370  cd templates/
+ 1371  history | grep subs
+ 1372  history | grep account
+ 1373  az account list -o table
+ 1374  de iac/
+ 1375  git log
+ 1376  ls
+ 1377  cd iac/
+ 1378  git log
+ 1379  git status
+ 1380  git commit -m "configuraciones function apps"
+ 1381  git commit -m "configuraciones function apps" colombia/pt-recovery/functionappsiigo/terragrunt.hcl 
+ 1382  cd ..
+ 1383  ls
+ 1384  cd iac/
+ 1385  ls
+ 1386  cd colombia/
+ 1387  ls
+ 1388  cd ..
+ 1389  ls
+ 1390  cd ecuador/
+ 1391  ls
+ 1392  cd siigonube/
+ 1393  ls
+ 1394  cd prod/
+ 1395  cd ..
+ 1396  cd qa/
+ 1397  ls
+ 1398  cd ..
+ 1399  mkdir aks datadog
+ 1400  ls
+ 1401  cd ak
+ 1402  cd aks/
+ 1403  ls
+ 1404  cd ..
+ 1405  rm -r aks/
+ 1406  ls datadog/
+ 1407  rm -r datadog/
+ 1408  ls
+ 1409  cd prod/
+ 1410  ls
+ 1411  cd aks/
+ 1412  ls
+ 1413  terragrunt status
+ 1414  terragrunt refresh
+ 1415  ls
+ 1416  terragrunt init
+ 1417  ls
+ 1418  terragrunt plan
+ 1419  cd ..
+ 1420  ls
+ 1421  cd ..
+ 1422  ls
+ 1423  mkdir aks-prod
+ 1424  cd aks-prod/
+ 1425  ls
+ 1426  mkdir aks
+ 1427  ls
+ 1428  cd ..
+ 1429  ls
+ 1430  cd aks-prod/
+ 1431  ls
+ 1432  cd aks/
+ 1433  ls
+ 1434  cd ..
+ 1435  ls
+ 1436  cd ..
+ 1437  ls
+ 1438  rm -rf aks-prod/
+ 1439  git pull
+ 1440  git checkout -b feat/infra/davi800971-aks-prod-ec
+ 1441  ls
+ 1442  cd pd-cluster/
+ 1443  mkdir aks
+ 1444  mkdir kafka
+ 1445  az account list -o table
+ 1446  az account list -o table | grep f13abb61-c114-4c30-ba00-1f4de2e33f57
+ 1447  istio
+ 1448  kafka
+ 1449  helm
+ 1450  kubectl cluster-info
+ 1451  ls
+ 1452  cd aks/
+ 1453  ls
+ 1454  terragrunt plan
+ 1455  git log
+ 1456  ls
+ 1457  cd iac/
+ 1458  ls
+ 1459  cd mexico/
+ 1460  ls
+ 1461  cd qa/
+ 1462  ls
+ 1463  cd aks/
+ 1464  terragrunt plan
+ 1465  cd
+ 1466  cd Downloads/
+ 1467  ls
+ 1468  cd istio-1.6.8/
+ 1469  ls
+ 1470  cd iac/ecuador/siigonube/pd-cluster/aks/
+ 1471  terragrunt plan
+ 1472  terragrunt apply
+ 1473  az aks get-versions
+ 1474  az aks get-versions --location eastus2
+ 1475  az aks get-versions --location eastus2 -o table
+ 1476  terragrunt apply
+ 1477  terragrunt plan
+ 1478  terragrunt apply
+ 1479  pwd
+ 1480  cd ..
+ 1481  ls
+ 1482  cd datadog/
+ 1483  ls
+ 1484  terraform init
+ 1485  vi terragrunt.hcl 
+ 1486  terragrunt plan
+ 1487  terragrunt apply
+ 1488  cd ..
+ 1489  ls
+ 1490  cd istio/
+ 1491  ls
+ 1492  terragrunt plan
+ 1493  terragrunt apply
+ 1494  istio
+ 1495  terragrunt apply
+ 1496  cd iac/
+ 1497  ls
+ 1498  cd ecuador/
+ 1499  ls
+ 1500  cd siigonube/
+ 1501  ls 
+ 1502  cd pd-cluster/
+ 1503  ls
+ 1504  cd istio/
+ 1505  ls
+ 1506  terragrunt apply
+ 1507  istictl
+ 1508  istioctl
+ 1509  cd
+ 1510  cd Downloads/
+ 1511  ls
+ 1512  cd istio/
+ 1513  cd istio-1.10.1/
+ 1514  export PATH=$PWD/bin:$PATH
+ 1515  istioctl 
+ 1516  cd ..
+ 1517  cd Documents/Git_Documents/iac/ecuador/siigonube/pd-cluster/istio/
+ 1518  terragrunt apply
+ 1519  cd ..
+ 1520  ls
+ 1521  cd datadog/
+ 1522  terragrunt apply
+ 1523  terragrunt refresh
+ 1524  terragrunt apply
+ 1525  terragrunt destroy
+ 1526  terragrunt apply
+ 1527  history | grep account
+ 1528  az account list -o table
+ 1529  az account set --subscription "Clientes Ecuador W-CSP"
+ 1530  ls
+ 1531  cd Downloads/
+ 1532  ls
+ 1533  mkdir istio
+ 1534  cd istio/
+ 1535  curl -L https://istio.io/downloadIstio | sh -
+ 1536  cd istio-1.10.1
+ 1537  export PATH=$PWD/bin:$PATH
+ 1538  istio
+ 1539  istioctl 
+ 1540  ls
+ 1541  cd bin/
+ 1542  ls
+ 1543  sudo su -
+ 1544  history
+ 1545  sudo su -
+ 1546  istioctl 
+ 1547  cd iac/ecuador/siigonube/pd-cluster/datadog/
+ 1548  ls
+ 1549  terragrunt apply
+ 1550  kubectl -n istio-system 
+ 1551  istioctl 
+ 1552  ls
+ 1553  cd Downloads/
+ 1554  curl -sS https://webinstall.dev/k9s | bash
+ 1555  ls
+ 1556  export PATH="/home/joseimanul/.local/bin:$PATH"
+ 1557  k9s
+ 1558  history | grep account
+ 1559  az account set --subscription "Clientes Ecuador W-CSP"
+ 1560  history | grep kube
+ 1561  history | grep az
+ 1562  az aks list -o table 
+ 1563  az aks get-credentials --resource-group rgProdEcAks --name PdEcAksCluster --admin
+ 1564  k9s
+ 1565  istioctl install
+ 1566  helm repo update
+ 1567  helm
+ 1568  helm list
+ 1569  helm repo list
+ 1570  helm install
+ 1571  helm repo add "stable" "https://charts.helm.sh/stable" --force-update
+ 1572  helm repo update
+ 1573  helm repo list
+ 1574  helm repo add stable https://kubernetes-charts.storage.googleapis.com/
+ 1575  helm repo add stable https://kubernetes-charts.storage.googleapis.com/ --force-update
+ 1576  helm repo add strimzi https://strimzi.io/charts/
+ 1577  helm repo update
+ 1578  cd iac/ecuador/siigonube/pd-cluster/datadog/
+ 1579  terragrunt destroy
+ 1580  terragrunt apply
+ 1581  kubectl 
+ 1582  export PATH="/home/joseimanul/.local/bin:$PATH"
+ 1583  k9s
+ 1584  terragrunt apply
+ 1585  cd ..
+ 1586  cd kafka/
+ 1587  terragrunt apply
+ 1588  helm repo update
+ 1589  helm
+ 1590  terragrunt apply
+ 1591  helm repo update
+ 1592  terragrunt apply
+ 1593  cd ../siigo/
+ 1594  terragrunt plan
+ 1595  terragrunt apply
+ 1596  sudo add-apt-repository ppa:pinta-maintainers/pinta-stable
+ 1597  sudo apt-get update
+ 1598  sudo apt-get install pinta
+ 1599  cd iac/
+ 1600  ls
+ 1601  git branch
+ 1602  git checkout feat/infra/davi800971-pt-recovery 
+ 1603  cd colombia/pt-recovery/
+ 1604  ls
+ 1605  cd functionappsiigo/
+ 1606  ls
+ 1607  terragrunt plan
+ 1608  cd ..
+ 1609  la
+ 1610  cd webappssiigo/
+ 1611  ls
+ 1612  terragrunt destroy
+ 1613  terragrunt refresh
+ 1614  cd ..
+ 1615  cd appservicesplan/
+ 1616  terragrunt refresh
+ 1617  cd ..
+ 1618  cd pt-recovery/
+ 1619  cd storage-accounts/
+ 1620  terragrunt destroy
+ 1621  cd ..
+ 1622  cd appservicesplan/
+ 1623  terragrunt destroy
+ 1624  clear
+ 1625  pwd
+ 1626  ls
+ 1627  terragrunt plan
+ 1628  clear
+ 1629  terragrunt apply
+ 1630  terragrunt destroy
+ 1631  terragrunt apply
+ 1632  cd ..
+ 1633  cd storage-accounts/
+ 1634  terragrunt apply
+ 1635  cd ../webappssiigo/
+ 1636  terragrunt apply
+ 1637  cd ..
+ 1638  ls
+ 1639  cd ..
+ 1640  cd pt-recovery/
+ 1641  cd storage-accounts/
+ 1642  terragrunt destroy
+ 1643  cd iac/ecuador/siigonube/pd-cluster/aks/
+ 1644  terragrunt apply
+ 1645  ls
+ 1646  terragrunt apply
+ 1647  history
+ 1648  pwd
+ 1649  cd 
+ 1650  cd Downloads/istio/istio-1.10.1/
+ 1651  export PATH=$PWD/bin:$PATH
+ 1652  cd /home/joseimanul/Documents/Git_Documents/iac/ecuador/siigonube/pd-cluster/aks
+ 1653  cd ..
+ 1654  cd istio/
+ 1655  terragrunt apply
+ 1656  terragrunt refresh
+ 1657  terragrunt apply
+ 1658  cd ../../../../..
+ 1659  cd infrastructure-modules/
+ 1660  ls
+ 1661  git log
+ 1662  history
+ 1663  az aks get-credentials --resource-group rgProdEcAks --name PdEcAksCluster --admin
+ 1664  istioctl install
+ 1665  cd iac/
+ 1666  ls
+ 1667  cd ecuador/
+ 1668  cd siigonube/
+ 1669  cd pd-cluster/
+ 1670  ls
+ 1671  cd siigo/
+ 1672  terragrunt destroy
+ 1673  cd ..
+ 1674  ls
+ 1675  cd aks/
+ 1676  terragrunt destroy
+ 1677  terragrunt apply
+ 1678  terragrunt detroy
+ 1679  terragrunt destroy
+ 1680  terragrunt apply
+ 1681  cd ..
+ 1682  ls
+ 1683  cd istio/
+ 1684  ls
+ 1685  terragrunt apply 
+ 1686  cd ../datadog/
+ 1687  terragrunt apply
+ 1688  cd ..
+ 1689  ls
+ 1690  cd kafka/
+ 1691  terragrunt apply
+ 1692  cd ..
+ 1693  ls
+ 1694  cd siigo/
+ 1695  terragrunt apply
+ 1696  cd ..
+ 1697  cd iac/
+ 1698  ls
+ 1699  cd ecuador/
+ 1700  ls
+ 1701  cd ../colombia/pt-recovery/
+ 1702  ls
+ 1703  cd functionappsiigo/
+ 1704  cd ../webappssiigo/
+ 1705  terragrunt destroy
+ 1706  ls
+ 1707  cd ..
+ 1708  ls
+ 1709  git pull
+ 1710  git checkout Ojed801311 
+ 1711  git log
+ 1712  git checkout -b fea/infra/davi800971-webapps-ec-prod
+ 1713  ps -fea | grep global
+ 1714  cd iac
+ 1715  df -h
+ 1716  docker images
+ 1717  sudo docker images
+ 1718  docker images inspect d1165f221234
+ 1719  docker image inspect d1165f221234
+ 1720  sudo docker image inspect d1165f221234
+ 1721  docker container ls -a
+ 1722  sudo docker container ls -a
+ 1723  history | docker
+ 1724  history | grep docker
+ 1725  sudo docker run -p 5000:5000 in28min/hello-world-java:0.0.1.RELEASE
+ 1726  sudo docker run -d -p 5000:5000 in28min/hello-world-nodejs:0.0.1.RELEASE
+ 1727  sudo docker container rm 79d9a1f26cd56bb7af96ab1eb1642ae7d00f3d0da69b1b2436a55cfc96f2bdc1
+ 1728  sudo docker container stop 79d9a1f26cd56bb7af96ab1eb1642ae7d00f3d0da69b1b2436a55cfc96f2bdc1.
+ 1729  sudo docker container stop 79d9a1f26cd56bb7af96ab1eb1642ae7d00f3d0da69b1b2436a55cfc96f2bdc1
+ 1730  sudo docker container rm 79d9a1f26cd56bb7af96ab1eb1642ae7d00f3d0da69b1b2436a55cfc96f2bdc1
+ 1731  sudo docker container ls 
+ 1732  sudo docker container ls -a
+ 1733  sudo docker container prune
+ 1734  sudo docker container ls -a
+ 1735  sudo docker system df
+ 1736  sudo docker system events
+ 1737  cat /etc/os-release
+ 1738  history > history.txt

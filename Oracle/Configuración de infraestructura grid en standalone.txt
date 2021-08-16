@@ -1,0 +1,157 @@
+***********************************************
+###########PRE REQUISITOS DE MÁQUINA###########
+***********************************************
+
+#Para chequear RAM, mínimo 8 
+grep MemTotal /proc/meminfo
+#Para chequear SWAP, mínimo 8
+grep SwapTotal /proc/meminfo
+
+Mínimo 12 GB para Oracle Grid Infrastructure
+
+Oracle recomienda 100 GB solo para patches.
+
+Mínimo 10 GB para Oracle Database Enterprise Edition.
+
+#Mínimo 1GB de espacio en /tmp
+df -h /tmp
+
+Oracle Linux de 7.5 o mas de 64 bits
+Si es red hat apartir de 7.2 de 64 bits
+
+********************************************************
+###########CONFIGURACION ADICIONAL EN RED HAT###########
+********************************************************
+#Inscribir la cuenta de red hat del grupo de operaciones
+subscription-manager register --username joseimanul --password Jose+124 --auto-attach
+subscription-manager register --username <NOMBRE_CUENTA_OPERACIONES> --password <CONTRASEÑA_CUENTA_OPERACIONES> --auto-attach
+
+*************************************
+###########CONFIGURACIONES###########
+*************************************
+
+#####COMO ROOT#####
+
+#modificar los limites de máquina por usuario, agregar al final del documento, la siguiente información.
+vi /etc/security/limits.conf
+
+grid soft nofile 1024
+grid hard nofile 65536
+grid soft nproc 2047
+grid hard nproc 16384
+grid soft core unlimited
+grid hard core unlimited
+grid soft memlock 3145728
+grid hard memlock 3145728
+grid soft stack 10240
+grid hard stack 32768
+
+oracle soft nofile 1024
+oracle hard nofile 65536
+oracle soft nproc 2047
+oracle hard nproc 16384
+oracle soft core unlimited
+oracle hard core unlimited
+oracle soft memlock 3145728
+oracle hard memlock 3145728
+oracle soft stack 10240
+oracle hard stack 32768
+
+
+#Creación de grupos
+/usr/sbin/groupadd -g 54321 oinstall
+/usr/sbin/groupadd -g 54329 asmadmin
+/usr/sbin/groupadd -g 54327 asmdba
+/usr/sbin/groupadd -g 54328 asmoper
+/usr/sbin/groupadd -g 54322 dba
+/usr/sbin/groupadd -g 54323 oper
+/usr/sbin/groupadd -g 54324 backupdba
+/usr/sbin/groupadd -g 54325 dgdba
+/usr/sbin/groupadd -g 54326 kmdba
+/usr/sbin/groupadd -g 54330 racdba
+
+#Creacion de usuario oracle
+/usr/sbin/useradd -u 54321 -g oinstall -G dba,asmdba,backupdba,dgdba,kmdba,racdba oracle
+#Creación de usuario grid
+/usr/sbin/useradd -u 54331 -g oinstall -G dba,asmdba,backupdba,dgdba,kmdba,racdba,asmadmin,asmoper grid
+
+#Asignar contraseñas al usuario oracle y al usuario grid
+passwd oracle
+0r4cl3
+passwd grid
+gr1d
+usermod -aG wheel grid
+
+
+#En la primera línea del archivo .profile o .bash_profile del usuario oracle y el usuario grid, agregar la siguiente linea, y guardar
+vi /home/oracle/.bash_profile
+vi /home/grid/.bash_profile
+umask 022
+#Ejecutar el archivo que corresponda, sea profile o bash_profile
+. .profile 
+. .bash_profile
+
+#Instalar pre configuración de Oracle
+yum -y update
+yum -y install oracle-database-preinstall-18c
+
+#Crear en el disco "/oracle" las siguientes carpetas 
+mkdir -p /oracle/u01/app/oracle/product/18.0.0/grid
+mkdir -p /oracle/u01/app/grid
+mkdir -p /oracle/u01/app/oracle
+mkdir -p /oracle/u01/app/oraInventory
+
+#Cambiar de dueño las carpetas
+chown -R grid:oinstall /oracle/u01
+chown oracle:oinstall /oracle/u01/app/oracle
+chown oracle:oinstall /oracle/u01/app/oraInventory
+chmod -R 775 /oracle/u01/
+
+#Setear las siguientes variables de entorno
+export ORACLE_HOME=/oracle/u01/app/oracle/product/18.0.0/grid
+export ORACLE_BASE=/tmp
+
+#Descargar desde la página de oracle, los archivos "Oracle Database 18c (18.3) for Linux x86-64" y "Oracle Database 18c Grid Infrastructure (18.3) for Linux x86-64"
+https://www.oracle.com/database/technologies/oracle18c-linux-180000-downloads.html
+usuario: Operaciones.OOL@openintl.com
+password: Open2018$
+
+#Conectarse por medio de winscp, con las credenciales del usuario grid, al servidor de base de datos, y mover el archivo "LINUX.X64_180000_grid_home.zip" al siguiente directorio:
+/oracle/u01/app/oracle/product/18.0.0/grid
+
+
+#Volver a la consola de linux y conectarse como el usuario grid 
+su - grid
+
+#Ingresar a la carpeta donde descargamos el documento .zip de grid y lo descomprimimos.
+cd /oracle/u01/app/oracle/product/18.0.0/grid
+unzip -q LINUX.X64_180000_grid_home.zip
+
+#ingresamos al directorio rpm
+cd /oracle/u01/app/oracle/product/18.0.0/grid/cv/rpm/
+#Instalar pograma cvuqdisk-1.0.10-1, por medio del comando rpm
+sudo rpm -ivh cvuqdisk-1.0.10-1.rpm
+
+#ingresamos al directorio bin
+cd /oracle/u01/app/oracle/product/18.0.0/grid/bin
+#ejecutamos los siguientes comandos, para etiquetar los discos para el disck group
+./asmcmd afd_label DATA1 /dev/sdc1 --init
+./asmcmd afd_label DATA2 /dev/sdf1 --init
+#Verificar que quedaron etiquetados
+./asmcmd afd_lslbl /dev/sdc1
+./asmcmd afd_lslbl /dev/sdf1
+
+#Desetear la variable de entorno ORACLE_BASE
+unset ORACLE_BASE
+
+
+*********************************
+###########INSTALACIÓN###########
+*********************************
+
+#La instalación de grid se hace por medio de una interfaz gráfica, por tal motivo tenemos dos opciones, la primera es habilitar el motor gráfico de la herramienta MobaXterm, la segunda es ingresar directamente a la interfaz gráfica de nuestro servidor, por medio de Vmware. En cualquiera de los dos casos, debemos ingresar a una terminal y ejecutar los siguientes comandos:
+cd oracle/u01/app/oracle/product/18.0.0/grid/
+./gridSetup.sh
+
+Seleccionar "Configure Oracle Grid Infrastructure for a Standalone Server (Oracle Restart)" y next
+Seleccionar 

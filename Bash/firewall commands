@@ -1,0 +1,54 @@
+systemctl status firewalld
+
+firewall-cmd --state
+
+#Detener firewalld
+systemctl stop firewalld
+systemctl start firewalld
+
+#iniciar firewalld
+service firewalld start
+systemctl start firewalld
+
+firewall-cmd --get-active-zones
+
+firewall-cmd --get-zones
+
+firewall-cmd --set-default-zone=home
+
+firewall-cmd --get-services
+firewall-cmd --permanent --zone=public --add-service=http
+
+firewall-cmd --zone=public --list-all
+
+firewall-cmd --permanent --zone=public --add-port=8161/tcp
+firewall-cmd --permanent --zone=public --add-port=26380/tcp
+firewall-cmd --permanent --zone=public --add-port=2049/tcp
+firewall-cmd --permanent --zone=public --add-port=2050/tcp
+firewall-cmd --permanent --zone=public --add-port=61616/tcp
+
+firewall-cmd --permanent --zone=public --add-port=111/udp
+firewall-cmd --permanent --zone=public --add-port=2048/udp
+
+firewall-cmd --zone=public --remove-port=10389/tcp
+
+##This information is stored in the /etc/firewalld/firewalld.conf file.
+
+
+
+##Crear nueva zona
+firewall-cmd --permanent --new-zone=nuevazona
+
+
+
+https://www.tecmint.com/firewalld-rules-for-centos-7/
+
+https://www.certdepot.net/rhel7-get-started-firewalld/
+
+### Cambiar a iptables
+https://www.certdepot.net/rhel7-disable-firewalld-use-iptables/
+https://access.redhat.com/solutions/653393
+
+129.213.55.117
+
+sfba0800/Op3nP4s$#2019_
